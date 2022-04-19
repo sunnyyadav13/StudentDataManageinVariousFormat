@@ -1,0 +1,18 @@
+package studentManageExcel;
+
+public class HomeClass {
+
+	public static void main(String[] args) {
+		
+		StudentClass Shivam=new StudentClass(1, "Ramesh Yadav",56,99,89,95, 98);
+		
+		Object[] obj =Shivam.calculatation();
+		
+		Shivam.writeData();
+		
+
+}
+
+	
+	
+}

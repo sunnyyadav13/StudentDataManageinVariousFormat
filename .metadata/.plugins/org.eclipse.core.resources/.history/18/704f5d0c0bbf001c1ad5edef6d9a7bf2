@@ -1,0 +1,75 @@
+package studentManageJSONpkg;
+
+import java.io.IOException;
+
+
+public class StudentC {
+	int rollno;
+	String name,section,grade;
+	int physics_marks ,maths_marks,chemistry_marks,english_marks,computerScience_marks;
+	int total;
+	double percentage;
+	
+	
+	
+	//-----------------------Constructors-------------------
+	public StudentC() {
+		
+	}
+	
+	public StudentC(int rollno, String name, String section, int physics_marks, int maths_marks,
+			int chemistry_marks, int english_marks, int computerScience_marks) {
+		
+		this.rollno = rollno;
+		this.name = name;
+		this.section = section;
+		this.physics_marks = physics_marks;
+		this.maths_marks = maths_marks;
+		this.chemistry_marks = chemistry_marks;
+		this.english_marks = english_marks;
+		this.computerScience_marks = computerScience_marks;
+		
+	}
+	
+	
+	
+
+	//-----------------------getter & setter-------------------
+
+
+
+
+	
+	
+
+	
+	public Object[] calculatation() {
+		
+		
+		
+		int total= this.physics_marks+maths_marks+this.chemistry_marks+this.english_marks+this.computerScience_marks;
+		double per=(total/500.0)*100;
+//		System.out.println("per"+per);
+		String grade;
+		
+		if (per>90) {	grade="A";	}
+		else if(per<=90 && per>80) {grade="B"; }
+		else if(per<=80 && per>70) {grade="C"; }
+		else if(per<=70 && per>60) {grade="D"; }
+		else if(per<=60 && per>50) {grade="E"; }
+		else if(per<=50 && per>40) {grade="F"; }
+		else if(per<=40 && per>30) {grade="G"; }
+		else {
+			grade="Fail";
+		}
+		
+		this.total=total;
+		this.percentage=per;
+		this.grade=grade;
+		
+		return new Object[] {total,per,grade};
+		
+		
+	}
+
+}

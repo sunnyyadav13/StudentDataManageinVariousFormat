@@ -1,0 +1,30 @@
+/* package codechef; // don't place package name! */
+package studentManageExcel;
+
+import java.util.*;
+
+import org.apache.commons.compress.harmony.pack200.NewAttribute;
+
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+
+
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Object[] arr=Codechef.abc();
+		
+		System.out.println((Integer)arr[1]);
+		
+		
+	}
+	
+	static Object abc(){
+		
+		    return new Object();
+	}
+}

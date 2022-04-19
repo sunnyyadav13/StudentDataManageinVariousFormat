@@ -1,0 +1,18 @@
+package studentManageExcel;
+
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Object[] arr=Codechef.abc();
+		
+		System.out.println((Integer)arr[1]);
+		
+		
+	}
+	
+	public static Object[] abc(){
+		    return Object[]{1,"sunny yadav",'f',23.1};
+	}
+}

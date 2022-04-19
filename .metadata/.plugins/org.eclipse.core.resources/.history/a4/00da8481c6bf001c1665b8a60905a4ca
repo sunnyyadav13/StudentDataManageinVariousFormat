@@ -1,0 +1,118 @@
+package studentManageJSONpkg;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
+public class JsonWrite  {
+	
+	static JSONParser jsonParser = new JSONParser();
+	static JSONArray finalArray=new JSONArray(); // root array
+	static JSONObject user = new JSONObject(); // root obj
+	@SuppressWarnings("unchecked")
+	public static void createJSON() throws IOException {
+		
+		finalArray.add(user);
+		
+		FileWriter file = new FileWriter("Student.json");
+
+        file.write(finalArray.toJSONString());
+        file.flush();
+		
+	}
+	
+    
+    @SuppressWarnings("unchecked")
+	public static void writeData(StudentC userC) {
+    	try {
+    		Object obj = jsonParser.parse(new FileReader("Student.json"));
+            JSONArray jsonArray = (JSONArray)obj;
+            System.out.println(jsonArray);
+            
+            
+    	
+        JSONObject userDetails=new JSONObject();
+        
+        userDetails.put("RollNo", userC.getRollno());
+        userDetails.put("Name", userC.getName());
+        userDetails.put("Section", userC.getSection());
+        userDetails.put("Physics", userC.getPhysics_marks());
+        userDetails.put("Chemistry", userC.getChemistry_marks());
+        userDetails.put("Maths", userC.getMaths_marks());
+        userDetails.put("English", userC.getEnglish_marks());
+        userDetails.put("ComputerSci", userC.getComputerScience_marks());
+        userDetails.put("Total", userC.getTotal());
+        userDetails.put("Percentage", userC.getPercentage());
+        userDetails.put("Grade", userC.getGrade());
+
+       
+
+        //Add employees to list
+      
+        finalArray.add(userDetails);
+        
+
+        //Write JSON file
+        FileWriter file = new FileWriter("Student.json");
+
+        file.write(finalArray.toJSONString());
+        file.flush();
+
+        }catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    	
+        System.out.println("User Complete data updated in json file ");
+    }
+    
+    
+    
+    
+    
+    @SuppressWarnings("unchecked")
+	public static void writeCalc(StudentC userC,String NAME) {
+//    	try {
+//        //Single User
+//    	JSONParser jsonParser = new JSONParser();
+//    	FileReader reader = new FileReader("Student.json");
+//    	Object obj = jsonParser.parse(reader);
+//    	
+//    	JSONObject user= (JSONObject) obj;
+//    	
+//    	JSONObject value=(JSONObject) user.get(NAME);
+//        
+//        
+//    	
+//        value.remove("Total");
+//        value.put("Total", userC.getTotal());
+//                
+//        value.remove("Percentage");
+//        value.put("Percentage", userC.getPercentage());
+//                
+//        value.remove("Grade");
+//        value.put("Grade", userC.getGrade());
+// 
+//        //Add employees to list
+////        JSONArray finalArray = new JSONArray();
+//        
+////        //Write JSON file
+//        FileWriter file = new FileWriter("Student.json");
+////
+//        file.write(user.toJSONString());
+//        file.flush();
+//        
+//        }catch (IOException | ParseException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("complete data  update succesful");
+//    	
+    	
+    }
+}

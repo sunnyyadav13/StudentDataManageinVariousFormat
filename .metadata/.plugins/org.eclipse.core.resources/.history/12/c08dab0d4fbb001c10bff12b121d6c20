@@ -1,0 +1,22 @@
+package studentManageExcel;
+
+import java.io.IOException;
+
+public class HomeClass {
+
+	public static void main(String[] args) throws IOException {
+		
+		StudentClass Shivam=new StudentClass();
+		
+		Object[] obj =Shivam.calculatation();
+		
+		WritingExcel.writeExcel(Shivam);
+		
+		Shivam.writeData(obj);
+		
+
+}
+
+	
+	
+}

@@ -1,0 +1,75 @@
+package studentManageJSONpkg;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class JsonRead {
+	@SuppressWarnings("unchecked")
+    public static void readData() {
+        // JSON parser object to parse read file
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader("Student.json")) {
+            // Read JSON file
+            Object obj = jsonParser.parse(reader);
+
+            JSONArray userList = (JSONArray) obj;
+
+            // Iterate over employee array
+            userList.forEach(user -> parseUserObject((JSONObject) user));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void parseUserObject(JSONObject user) {
+
+        // Get user rollno
+        Long Rollno = (Long) user.get("rollNo");
+        System.out.println(id);
+
+        // Get user name
+        String Name = (String) user.get("Name");
+        System.out.println(Name);
+        
+        String Section = (String) user.get("Section");
+        System.out.println(Section);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        String Physics = (String) user.get("Physics");
+        System.out.println(Physics);
+        
+        
+        
+        
+    }
+}
+}
